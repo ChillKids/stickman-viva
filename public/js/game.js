@@ -1,75 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+const { event } = require("firebase-functions/lib/providers/analytics");
 
-<head>
-    <link rel="stylesheet" type="text/css" href="../public/css/main.css">
-    <meta charset="UTF-8">
-    <meta name="description" content="party game">
-    <meta name="keywords" content="Stickman viva">
-    <meta name="author" content="Jack Leung">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stickman Viva</title>
-</head>
-
-<body>
-    <div class="container">
-        <div id="game">
-            <canvas id="canvas"></canvas>
-            <div id="health-bars">
-                <div class="health-label">
-                    <strong>Player 1</strong><br><span id="p1-kills">0</span> KO(s)
-                </div>
-                <div class="health">
-                    <span class="fill" id="p1-health"></span>
-                </div>
-                <div class="health">
-                    <span class="fill" id="p2-health"></span>
-                </div>
-                <div class="health-label">
-                    <strong>Player 2</strong><br><span id="p2-kills">0</span> KO(s)
-                </div>
-            </div>
-        </div>
-        <div id="controls">
-            <div id="p1-ctrls">
-                <div class="move" id="p1-left"><span class="arrow-left"></span></div>
-                <div class="move" id="p1-right"><span class="arrow-right"></span></div>
-                <div class="a-btn" id="p1-up">A</div>
-                <div class="b-btn" id="p1-atk">B</div>
-            </div>
-            <div id="p2-ctrls">
-                <div class="move" id="p2-left"><span class="arrow-left"></span></div>
-                <div class="move" id="p2-right"><span class="arrow-right"></span></div>
-                <div class="a-btn" id="p2-up">A</div>
-                <div class="b-btn" id="p2-atk">B</div>
-            </div>
-        </div>
-        <div id="keys">
-            <div id="p1-keys">
-                <kbd>A</kbd>
-                <kbd>D</kbd>
-                <kbd>W</kbd>
-                <kbd>Shift</kbd>
-            </div>
-            <div id="p2-keys">
-                <kbd>&#8592;</kbd>
-                <kbd>&#8594;</kbd>
-                <kbd>&#8593;</kbd>
-                <kbd>;</kbd>
-            </div>
-        </div>
-    </div>
-</body>
-
-<script>
-    (function() {
+(function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
     window.requestAnimationFrame = requestAnimationFrame;
 })();
 
+// document.addEventListener("DOMContentLoaded", event=>{
+//     const app = firebase.app();
+// })
+
+// function join(){
+//     const provider = new firebase.auth.
+// }
+
+
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"),
-    width = 1200,
+    width = 800,
     height = 400,
     player1 = {
       x: (width / 4),
@@ -209,6 +156,7 @@ for (var i = 0; i <= maxFrames; ++i) {
     }
 }
 healthP1.style.width = player1.health + "%";
+
 
 // load player 2 sprites
 for (var j = 0; j <= maxFrames; ++j) {
@@ -636,4 +584,3 @@ platforms.push({
 somethinghitme.com/2013/01/09/creating-a-canvas-platformer-tutorial-part-one/
 somethinghitme.com/2013/04/16/creating-a-canvas-platformer-tutorial-part-tw/
 */
-</script>
